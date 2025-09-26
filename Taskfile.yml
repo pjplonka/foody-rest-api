@@ -1,0 +1,31 @@
+version: '3'
+
+tasks:
+  sh:
+    cmds:
+      - docker compose exec laravel.test sh
+
+  sail:
+    cmds:
+      - ./vendor/bin/sail up
+
+  fresh:
+    cmds:
+      - docker compose exec laravel.test sh -c 'php artisan app:dump-db'
+      - docker compose exec laravel.test sh -c 'php artisan migrate:fresh'
+      - docker compose exec laravel.test sh -c 'php artisan app:import-db'
+#      - docker compose exec laravel.test sh -c 'php artisan db:seed'
+
+  dump:
+    cmds:
+      - docker compose exec laravel.test sh -c 'php artisan app:dump-db'
+
+  import:
+    cmds:
+      - docker compose exec laravel.test sh -c 'php artisan app:import-db'
+
+  drop:
+    cmds:
+      - docker compose exec laravel.test sh -c 'php artisan migrate:reset'
+      - docker compose exec laravel.test sh -c 'php artisan migrate'
+      - docker compose exec laravel.test sh -c 'php artisan app:import-db'
