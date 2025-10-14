@@ -17,6 +17,8 @@ class DumpDb extends Command
         $this->dump('products');
         $this->dump('meals');
         $this->dump('meal_products');
+        $this->dump('todos_categories');
+        $this->dump('todos');
     }
 
     private function dump(string $table)

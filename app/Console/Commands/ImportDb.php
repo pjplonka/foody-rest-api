@@ -18,6 +18,8 @@ class ImportDb extends Command
         $this->import('products');
         $this->import('meals');
         $this->import('meal_products');
+        $this->dump('todos_categories');
+        $this->dump('todos');
     }
 
     private function import(string $table)
