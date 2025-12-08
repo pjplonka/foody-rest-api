@@ -9,6 +9,10 @@ tasks:
     cmds:
       - ./vendor/bin/sail up
 
+  saild:
+    cmds:
+      - ./vendor/bin/sail up -d
+
   fresh:
     cmds:
       - docker compose exec laravel.test sh -c 'php artisan app:dump-db'
