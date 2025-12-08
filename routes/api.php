@@ -5,6 +5,7 @@ use App\Http\Controllers\MealsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopCategoryController;
+use App\Http\Controllers\TodoController;
 use App\Models\ShopCategory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -51,11 +52,17 @@ Route::middleware('api')->group(function () {
     Route::delete('/meals/{meal}/products/{meal_product}', [MealProductController::class, 'delete'])->name('meal_product.delete');
     Route::patch('/meals/{meal}/reorder', [MealProductController::class, 'reorder'])->name('meal_product.reorder');
 
-    Route::get('/shop-categories', [ShopCategoryController::class, 'index'])->name('products.index');
-    Route::post('/shop-categories', [ShopCategoryController::class, 'store'])->name('products.store');
+    Route::get('/shop-categories', [ShopCategoryController::class, 'index'])->name('shop_category.index');
+    Route::post('/shop-categories', [ShopCategoryController::class, 'store'])->name('shop_category.store');
     Route::get('/shop-categories/{shop-category}', [ShopCategoryController::class, 'get'])->name('shop_category.get');
     Route::patch('/shop-categories/{shop-category}', [ShopCategoryController::class, 'update'])->name('shop_category.update');
     Route::delete('/shop-categories/{shop-category}', [ShopCategoryController::class, 'delete'])->name('shop_category.delete');
+
+    Route::get('/todos', [TodoController::class, 'index'])->name('todo.index');
+    Route::post('/todos', [TodoController::class, 'store'])->name('todo.store');
+    Route::get('/todos/{todo}', [TodoController::class, 'get'])->name('todo.get');
+    Route::patch('/todos/{todo}', [TodoController::class, 'update'])->name('todo.update');
+    Route::delete('/todos/{todo}', [TodoController::class, 'delete'])->name('todo.delete');
 });
 
 require __DIR__.'/auth.php';

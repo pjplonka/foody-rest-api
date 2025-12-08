@@ -10,10 +10,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-LOCK TABLES `shop_categories` WRITE;
-/*!40000 ALTER TABLE `shop_categories` DISABLE KEYS */;
-INSERT INTO `shop_categories` VALUES (1,'Warzywa / Owoce','warzywa-owoce',1,'2025-10-04 18:31:09',NULL),(2,'Mięso','mieso',2,'2025-10-04 18:31:09',NULL),(3,'Nabiał','nabial',3,'2025-10-04 18:31:09',NULL),(4,'Pieczywo','pieczywo',4,'2025-10-04 18:31:09',NULL),(5,'Mrożonki','mrozonki',5,'2025-10-04 18:31:09',NULL),(6,'Przyprawy','przyprawy',6,'2025-10-04 18:31:09',NULL);
-/*!40000 ALTER TABLE `shop_categories` ENABLE KEYS */;
+LOCK TABLES `meals` WRITE;
+/*!40000 ALTER TABLE `meals` DISABLE KEYS */;
+INSERT INTO `meals` VALUES (1,'Naleśniki z serem na słodko','nalesniki-z-serem-na-slodko','2025-09-20 13:20:09','2025-09-20 13:20:09'),(2,'Zupa jarzynowa','zupa-jarzynowa','2025-09-20 13:20:09','2025-09-20 13:20:09'),(3,'Omlet na słono','omlet-na-slono','2025-09-20 14:35:55','2025-09-20 14:35:55');
+/*!40000 ALTER TABLE `meals` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

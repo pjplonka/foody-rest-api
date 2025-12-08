@@ -12,7 +12,7 @@
 
 LOCK TABLES `shop_categories` WRITE;
 /*!40000 ALTER TABLE `shop_categories` DISABLE KEYS */;
-INSERT INTO `shop_categories` VALUES (1,'Warzywa / Owoce','warzywa-owoce',1,'2025-10-04 18:31:09',NULL),(2,'Mięso','mieso',2,'2025-10-04 18:31:09',NULL),(3,'Nabiał','nabial',3,'2025-10-04 18:31:09',NULL),(4,'Pieczywo','pieczywo',4,'2025-10-04 18:31:09',NULL),(5,'Mrożonki','mrozonki',5,'2025-10-04 18:31:09',NULL),(6,'Przyprawy','przyprawy',6,'2025-10-04 18:31:09',NULL);
+INSERT INTO `shop_categories` VALUES (1,'Warzywa / Owoce','warzywa-owoce',1,'2025-10-04 18:31:09',NULL),(2,'Mięso','mieso',2,'2025-10-04 18:31:09',NULL),(3,'Nabiał','nabial',2,'2025-10-04 18:31:09',NULL);
 /*!40000 ALTER TABLE `shop_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

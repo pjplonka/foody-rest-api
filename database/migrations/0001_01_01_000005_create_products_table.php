@@ -19,7 +19,7 @@ return new class extends Migration
             $table->float('fat')->nullable();
             $table->float('sugar')->nullable();
             $table->float('calories')->nullable();
-            $table->float('is_done')->boolean();
+            $table->float('is_done')->default(false)->boolean();
             $table->timestamps();
         });
     }
