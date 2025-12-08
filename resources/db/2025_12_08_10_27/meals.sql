@@ -12,7 +12,7 @@
 
 LOCK TABLES `meals` WRITE;
 /*!40000 ALTER TABLE `meals` DISABLE KEYS */;
-INSERT INTO `meals` VALUES (1,'Naleśniki z serem na słodko','nalesniki-z-serem-na-slodko','2025-09-20 13:20:09','2025-09-20 13:20:09'),(2,'Zupa jarzynowa','zupa-jarzynowa','2025-09-20 13:20:09','2025-09-20 13:20:09'),(3,'Omlet na słono','omlet-na-slono','2025-09-20 14:35:55','2025-09-20 14:35:55'),(5,'Burger Wołowy','burger-wolowy','2025-10-04 16:37:05','2025-10-04 16:37:05');
+INSERT INTO `meals` VALUES (1,'Naleśniki z serem na słodko','nalesniki-z-serem-na-slodko','2025-09-20 13:20:09','2025-09-20 13:20:09'),(2,'Zupa jarzynowa','zupa-jarzynowa','2025-09-20 13:20:09','2025-09-20 13:20:09'),(3,'Omlet na słono','omlet-na-slono','2025-09-20 14:35:55','2025-09-20 14:35:55'),(5,'Burger Wołowy','burger-wolowy','2025-10-04 16:37:05','2025-10-04 16:37:05'),(6,'Sałatka z fetą','salatka-z-feta','2025-10-13 20:11:37','2025-10-13 20:11:37'),(7,'Kurczak z ryżem i warzywami','kurczak-z-ryzem-i-warzywami','2025-10-13 20:53:42','2025-10-13 20:53:42'),(8,'Jajecznica','jajecznica','2025-10-14 10:05:00','2025-10-14 10:05:00'),(9,'Owsianka','owsianka','2025-11-24 20:53:10','2025-11-24 20:53:10');
 /*!40000 ALTER TABLE `meals` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
