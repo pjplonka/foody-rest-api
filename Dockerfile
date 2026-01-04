@@ -31,10 +31,9 @@ RUN set -eux; \
 
 RUN chown -R www-data:www-data /var/www
 
-#COPY --link . ./
+COPY --link vendor ./
 
 WORKDIR /var/www
-
 
 FROM caddy:2.8 as caddy
 
