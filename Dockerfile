@@ -33,7 +33,7 @@ RUN set -eux; \
 	composer install --no-cache --prefer-dist --no-dev --no-scripts --no-progress
 
 RUN chown -R www-data:www-data /var/www
-RUN chmod 777 -R boostrap/
+RUN chmod 777 -R bootstrap/
 
 COPY --link . ./
 
