@@ -28,7 +28,7 @@ WORKDIR /var/www
 
 COPY --link composer.* symfony.* ./
 
-# --no-autoloader 
+# --no-autoloader
 RUN set -eux; \
 	composer install --no-cache --prefer-dist --no-dev --no-scripts --no-progress
 
