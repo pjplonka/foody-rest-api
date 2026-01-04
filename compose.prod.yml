@@ -31,6 +31,8 @@ services:
       container_name: php
       restart: unless-stopped
       user: "1000:1000"
+      environment:
+        DB_PASSWORD: DB_PASSWORD
 #      environment:
 #        DB_CONTAINER_NAME: ${DB_CONTAINER_NAME}
 #        DB_LOCAL_PORT: ${DB_LOCAL_PORT}

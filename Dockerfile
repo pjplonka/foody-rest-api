@@ -41,3 +41,4 @@ RUN chmod 777 -R bootstrap/
 FROM caddy:2.8 as caddy
 
 COPY --link Caddyfile /etc/caddy/Caddyfile
+COPY --link .env.example ./.env
