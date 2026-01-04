@@ -24,6 +24,7 @@ RUN set -eux; \
 
 #COPY --link frankenphp/conf.d/20-app.prod.ini $PHP_INI_DIR/app.conf.d/
 
+WORKDIR /var/www
 
 COPY --link composer.* symfony.* ./
 RUN set -eux; \
@@ -31,9 +32,7 @@ RUN set -eux; \
 
 RUN chown -R www-data:www-data /var/www
 
-COPY --link vendor ./
-
-WORKDIR /var/www
+COPY --link . ./
 
 FROM caddy:2.8 as caddy
 
