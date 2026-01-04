@@ -27,8 +27,10 @@ RUN set -eux; \
 WORKDIR /var/www
 
 COPY --link composer.* symfony.* ./
+
+# --no-autoloader 
 RUN set -eux; \
-	composer install --no-cache --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress
+	composer install --no-cache --prefer-dist --no-dev --no-scripts --no-progress
 
 RUN chown -R www-data:www-data /var/www
 
