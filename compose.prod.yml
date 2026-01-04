@@ -20,9 +20,9 @@ services:
         - proxy
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.caddy.rule=Host(`rountine.pjplonka.ovh`)"
-        - "traefik.http.routers.caddy.entrypoints=websecure"
-        - "traefik.http.routers.caddy.tls=true"
+        - "traefik.http.routers.rountine.rule=Host(`rountine.pjplonka.ovh`)"
+        - "traefik.http.routers.rountine.entrypoints=websecure"
+        - "traefik.http.routers.rountine.tls=true"
     php:
       build:
         context: .
