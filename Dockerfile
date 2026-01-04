@@ -35,10 +35,10 @@ RUN set -eux; \
 RUN chown -R www-data:www-data /var/www
 
 COPY --link . ./
+COPY --link .env.example ./.env
 
 RUN chmod 777 -R bootstrap/
 
 FROM caddy:2.8 as caddy
 
 COPY --link Caddyfile /etc/caddy/Caddyfile
-COPY --link .env.example ./.env
