@@ -18,6 +18,7 @@ services:
           - caddy_config:/config
       networks:
         - proxy
+        - rountine-internal
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.rountine.rule=Host(`rountine.pjplonka.ovh`)"
@@ -43,6 +44,8 @@ services:
 #        - php-app-network
 #      extra_hosts:
 #        - "host.docker.internal:host-gateway"
+      networks:
+        - rountine-internal
     db:
       image: mysql
       container_name: db
@@ -52,6 +55,8 @@ services:
         MYSQL_USER: sail
         MYSQL_PASSWORD: ${DB_PASSWORD}
         MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      networks:
+        - rountine-internal
       volumes:
         - db-data:/var/lib/mysql
 volumes:
@@ -62,3 +67,5 @@ networks:
   proxy:
     external: true
     name: proxy
+  rountine-internal:
+    driver: bridge

@@ -46,6 +46,9 @@ tasks:
   prod-db:
     cmds:
       - docker compose exec db sh
+  prod-caddy:
+    cmds:
+      - docker compose exec caddy sh
   prod-drop:
     cmds:
       - docker compose exec php sh -c 'php artisan migrate:reset'
