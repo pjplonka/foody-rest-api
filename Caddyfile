@@ -1,0 +1,19 @@
+localhost:443 {
+    root * /var/www/public
+    php_fastcgi php:9000
+    file_server
+
+    log {
+        output file /var/log/access.log
+    }
+}
+
+:80 {
+    root * /var/www/public
+    php_fastcgi php:9000
+    file_server
+
+    log {
+        output file /var/log/access.log
+    }
+}

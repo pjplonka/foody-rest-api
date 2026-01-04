@@ -33,3 +33,21 @@ tasks:
       - docker compose exec laravel.test sh -c 'php artisan migrate:reset'
       - docker compose exec laravel.test sh -c 'php artisan migrate'
       - docker compose exec laravel.test sh -c 'php artisan app:import-db'
+
+  prod:
+    cmds:
+      - docker compose -f compose.prod.yml up
+  prodd:
+    cmds:
+      - docker compose -f compose.prod.yml up
+  prod-php:
+    cmds:
+      - docker compose exec php sh
+  prod-db:
+    cmds:
+      - docker compose exec db sh
+  prod-drop:
+    cmds:
+      - docker compose exec php sh -c 'php artisan migrate:reset'
+      - docker compose exec php sh -c 'php artisan migrate'
+      - docker compose exec php sh -c 'php artisan app:import-db'

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $protein
@@ -25,8 +26,13 @@ class Product extends Model
         return null;
     }
 
+    public function shopCategory(): BelongsTo
+    {
+        return $this->belongsTo(ShopCategory::class);
+    }
+
     public function toArray(): array
     {
-        return array_merge(parent::toArray(), ['calories' => $this->calories()]);
+        return array_merge(parent::toArray(), ['calories' => $this->calories(), 'shop_category_name' => $this->shopCategory?->name]);
     }
 }

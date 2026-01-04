@@ -1,0 +1,64 @@
+services:
+    caddy:
+      build:
+        context: .
+        target: caddy
+      restart: unless-stopped
+      environment:
+        FASTCGI_TARGET: php
+#      ports:
+#          - "80:80"
+#          - "443:443"
+#          - "443:443/udp"
+      volumes:
+          - ./Caddyfile:/opt/caddy/Caddyfile
+            #            - ./site:/srv
+          - ./public:/var/www/public:ro
+          - caddy_data:/data
+          - caddy_config:/config
+      networks:
+        - proxy
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.caddy.rule=Host(`rountine.pjplonka.ovh`)"
+        - "traefik.http.routers.caddy.entrypoints=websecure"
+        - "traefik.http.routers.caddy.tls=true"
+    php:
+      build:
+        context: .
+        target: php
+      container_name: php
+      restart: unless-stopped
+      user: "1000:1000"
+#      environment:
+#        DB_CONTAINER_NAME: ${DB_CONTAINER_NAME}
+#        DB_LOCAL_PORT: ${DB_LOCAL_PORT}
+#        DB_USER: ${DB_USER}
+#        DB_PASSWORD: ${DB_PASSWORD}
+#        DB_NAME: ${DB_NAME}
+#      working_dir: /var/www/
+      volumes:
+        - ./:/var/www
+#      networks:
+#        - php-app-network
+#      extra_hosts:
+#        - "host.docker.internal:host-gateway"
+    db:
+      image: mysql
+      container_name: db
+      restart: unless-stopped
+      environment:
+#        MYSQL_DATABASE: myDb
+        MYSQL_USER: sail
+        MYSQL_PASSWORD: ${DB_PASSWORD}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      volumes:
+        - db-data:/var/lib/mysql
+volumes:
+    caddy_data:
+    caddy_config:
+    db-data:
+networks:
+  proxy:
+    external: true
+    name: proxy

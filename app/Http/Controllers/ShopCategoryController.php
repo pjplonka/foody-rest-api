@@ -11,7 +11,7 @@ class ShopCategoryController extends Controller
 {
     public function index()
     {
-        return ShopCategory::all();
+        return ShopCategory::orderBy('order')->get();
     }
 
     public function get(ShopCategory $shopCategory)
