@@ -7,3 +7,7 @@
         output file /var/log/access.log
     }
 }
+
+:85 {
+    respond "Hi"
+}
