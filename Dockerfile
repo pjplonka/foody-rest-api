@@ -37,7 +37,7 @@ RUN chown -R www-data:www-data /var/www
 COPY --link . ./
 COPY --link .env.example ./.env
 
-RUN #chmod 777 -R bootstrap/
+# RUN chmod 777 -R bootstrap/
 
 FROM caddy:2.8 as caddy
 
