@@ -33,9 +33,10 @@ RUN set -eux; \
 	composer install --no-cache --prefer-dist --no-dev --no-scripts --no-progress
 
 RUN chown -R www-data:www-data /var/www
-RUN chmod 777 -R bootstrap/
 
 COPY --link . ./
+
+RUN chmod 777 -R bootstrap/
 
 FROM caddy:2.8 as caddy
 
