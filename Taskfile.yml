@@ -54,3 +54,6 @@ tasks:
       - docker compose exec php sh -c 'php artisan migrate:reset'
       - docker compose exec php sh -c 'php artisan migrate'
       - docker compose exec php sh -c 'php artisan app:import-db'
+  prod-key:
+    cmds:
+      - docker compose exec php sh -c 'php artisan key:generate'

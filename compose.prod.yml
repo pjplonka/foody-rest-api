@@ -23,6 +23,7 @@ services:
         - "traefik.http.routers.rountine.rule=Host(`rountine.pjplonka.ovh`)"
         - "traefik.http.routers.rountine.entrypoints=websecure"
         - "traefik.http.routers.rountine.tls=true"
+        - "traefik.http.routers.rountine.tls.certresolver=letsencrypt"
     php:
       build:
         context: .
