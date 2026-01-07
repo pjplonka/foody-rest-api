@@ -35,7 +35,7 @@ RUN set -eux; \
 RUN chown -R www-data:www-data /var/www
 
 COPY --link . ./
-COPY --link .env.example ./.env
+COPY --link .env.example.prod ./.env
 
 # RUN chmod 777 -R bootstrap/
 
